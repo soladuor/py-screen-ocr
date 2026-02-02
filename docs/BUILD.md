@@ -11,7 +11,8 @@
    git add .
    git commit -m "release: v1.0.0"
    git tag v1.0.0
-   git push origin main --follow-tags
+   git push origin v1.0.0
+   # git push origin main --tags
    ```
 
 3. Actions 会自动在云端打包 exe 并上传到 Release 页面
