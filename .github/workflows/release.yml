@@ -4,9 +4,14 @@ on:
   push:
     tags:
       - 'v*'
+  workflow_dispatch:
 
 jobs:
   build:
+    # 用法参考 https://docs.github.com/zh/actions/tutorials/authenticate-with-github_token
+    # 权限参考 https://docs.github.com/zh/actions/reference/workflows-and-actions/workflow-syntax#permissions
+    permissions:
+      contents: write
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
