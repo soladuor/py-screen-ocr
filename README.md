@@ -1,6 +1,8 @@
 # py-screen-ocr
 
-一个轻量级的 Windows 屏幕 OCR 工具。通过鼠标框选屏幕区域，使用 Tesseract OCR 持续识别区域内的文字。支持配置字符白名单、正则匹配模式和页面分割模式（PSM）。本项目为学习练手 demo，涉及 Tkinter GUI 开发、OpenCV 图像处理和 Win32 API 屏幕截图等技术。
+一个轻量级的 Windows 屏幕 OCR 工具。通过鼠标框选屏幕区域，使用 Tesseract OCR 持续识别区域内的文字。
+支持配置字符白名单、正则匹配模式和页面分割模式（PSM）。
+本项目为学习练手 demo，涉及 Tkinter GUI 开发、OpenCV 图像处理和 Win32 API 屏幕截图等技术。
 
 ## 技术栈
 
@@ -44,7 +46,7 @@ python -m venv .venv
 pip install -r requirements.txt
 
 # 运行主程序
-python main.py
+python src/main.py
 ```
 
 ### 操作说明
@@ -62,18 +64,29 @@ python main.py
 
 ## 可配置项
 
-| 配置项 | 说明 | 示例/选项 |
-|--------|------|-----------|
-| 字符白名单 | OCR 只识别这些字符，留空识别所有字符 | `0123456789` |
-| 匹配模式 | 正则表达式，用于过滤 OCR 结果，留空返回全部结果 | `\d+` |
-| 识别模式 | Tesseract 页面分割模式 | 单行文本、单个单词、单个字符、文本块、自动分割 |
+| 配置项   | 说明                         | 示例/选项                   |
+|-------|----------------------------|-------------------------|
+| 字符白名单 | OCR 只识别这些字符，留空识别所有字符       | `0123456789`            |
+| 匹配模式  | 正则表达式，用于过滤 OCR 结果，留空返回全部结果 | `\d+`                   |
+| 识别模式  | Tesseract 页面分割模式           | 单行文本、单个单词、单个字符、文本块、自动分割 |
 
 ## 文件说明
 
-- `main.py` - 主程序入口，GUI 界面
-- `screen_ocr.py` - 屏幕截图和 OCR 识别功能
-- `screen_selector.py` - 屏幕区域选择工具
-- `screen_utils.py` - 屏幕工具函数（分辨率获取、DPI 缩放等）
+```
+py-screen-ocr/
+├── src/                    # 源代码
+│   ├── main.py             # 主程序入口，GUI 界面
+│   ├── screen_ocr.py       # 屏幕截图和 OCR 识别
+│   ├── screen_selector.py  # 屏幕区域选择工具
+│   └── screen_utils.py     # 屏幕工具函数（分辨率获取、DPI 缩放等）
+├── docs/                   # 文档
+│   ├── BUILD.md            # 打包指南（GitHub Actions）
+│   ├── BUILD_LOCAL.md      # 本地打包指南
+│   └── RELEASE_NOTES.md
+├── README.md
+├── LICENSE
+└── requirements.txt
+```
 
 ## 注意事项
 

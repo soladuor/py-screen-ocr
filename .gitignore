@@ -26,6 +26,7 @@ __pycache__/
 .Python
 develop-eggs/
 dist/
+build/
 downloads/
 eggs/
 .eggs/
@@ -185,3 +186,5 @@ data
 poetry.lock
 apps/setting/models_provider/impl/*/icon/
 tmp/
+
+.claude/
